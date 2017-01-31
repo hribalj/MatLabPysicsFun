@@ -1,18 +1,18 @@
-function pointAfter = movePt(pointBefore, time)
+function point = movePt(point, time)
 %{
 using the net Force from above, and the physics equations of motion
 to calculate the factors of point after the given time interval 
 %}
-[NFx,NFy] = netForce(pointBefore)
-accx = NFx/pointBefore.mass;
-accy = NFy/pointBefore.mass;
-Vx = pointBefore.velo + accx*time;
-Delx = pointBefore.velo*time+(.5)*(accx)*(time)^2;
-Vy = pointBefore.velo + accy*time;
-Dely = pointBefore.velo*time+(.5)*(accy)*(time)^2;
-newptx = Delx+pointBefore.loca (1);
-newpty = Dely+pointBefore.loca(2);
-pointAfter = struct('mass',pointBefore.mass,'loca',[1.000,-1.000],'velo', [0,0], 'forc',pointBefore.forc);
-pointAfter.loca = [newptx, newpty];
-pointAfter.velo = [Vx, Vy];
+[NFx,NFy] = netForce(point);
+accx = NFx/point.mass;
+accy = NFy/point.mass;
+Vx = point.velo(1) + accx*time;
+Delx = point.velo(1)*time+(.5)*(accx)*(time)^2;
+Vy = point.velo(2) + accy*time;
+Dely = point.velo(2)*time+(.5)*(accy)*(time)^2;
+newptx = Delx+point.loca(1);
+newpty = Dely+point.loca(2);
+point.loca = [newptx, newpty];
+point.velo = [Vx, Vy];
+
 end 
