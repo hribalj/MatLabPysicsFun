@@ -2,7 +2,7 @@ function points = simulate(points,forceFuncs,interval,time)
     timeE = 0;
     while(timeE < time)
         points = clearForces(points);
-        for F = length(forceFuncs)
+        for F = 1:length(forceFuncs)
             points = forceFuncs{F}(points);
         end
         for P = 1:length(points)
