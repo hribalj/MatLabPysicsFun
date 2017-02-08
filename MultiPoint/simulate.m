@@ -4,13 +4,13 @@ function Networks = simulate(Networks,forceFuncs,interval,time)
         for N = 1:Networks
             TNET = Networks(N);
             for P = TNET
-                TNET(P) = clearForces(TNET(P));
+                TNET = construct(TNET);
             end
             for F = 1:length(forceFuncs)
                 TNET.pnts = forceFuncs{F}(TNET.pnts);
             end
             TNET = moveNet(TNET,interval);
-            TNET = rotate(TNET,interval);
+            TNET = netRotate(TNET,interval);
             Networks(N) = TNET;
         end
         eTime = eTime + interval;

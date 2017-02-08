@@ -12,4 +12,4 @@ Points = [PointA PointB];
 clear PointA;
 clear PointB;
 
-%Points = simulate(Points,{@gravitate},.01,2);
+%Points = simulate(Points,{@gravitate,@electric},.01,2);

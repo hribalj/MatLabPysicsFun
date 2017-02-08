@@ -9,7 +9,5 @@ Network2 = struct('pnts',[PointC PointD],'loca',[0 0],'velo',[0,0],'avel',0,'mas
 
 Networks = [Network1 Network2];
 
-for N = 1:length(Networks)
-   Networks(N) = construct(Networks(N)); 
-end
+
 
