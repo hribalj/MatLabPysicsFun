@@ -10,4 +10,9 @@ Network1 = struct('pnts',[PointA PointB PointC PointD PointE],'boun',[],'area',0
 
 Networks = [Network1];
 
+options = struct('FOV', 4, 'stuff', 1);
+
+
+
+
 
