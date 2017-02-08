@@ -1,7 +1,7 @@
 function network = construct(network)
     netMass = 0;
-    Xs = zeros(length(network.pnts),1);
-    Ys = zeros(length(network.pnts),1);
+    Xs = zeros(length(network.pnts));
+    Ys = zeros(length(network.pnts));
     iter = 1;
     for P = network.pnts
         netMass = netMass + P.mass;
@@ -14,10 +14,9 @@ function network = construct(network)
     network.mass = netMass;
     network.loca = centerOfMass(network);
     network.mofi = momentOfInertia(network);
-    [A,network.area] = convhull(Xs,Ys,'simplify',true);
-    
-    for B = 1:length(A)-1
-        network.boun = [network.boun network.pnts(A(B))];
+    [network.boun,network.area] = convhull(Xs,Ys,'simplify',true);
+    for B = 1:length(network.pnts)
+        network.boun(
     end
     network = network;
 end
