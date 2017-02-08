@@ -7,5 +7,5 @@
         sumY = sumY + P.loc(2)*P.mass;
         sumM = sumM + P.mass;
     end
-    cenOfMass = [sumX sumY]./sumM;
+    cenOfMass = [sumX/sumM sumY/sumM];
 end
