@@ -8,8 +8,8 @@ global E;
 G = 6.67408 * 10^-11; % m^3 kg^-1 s^-2
 E = 8.8541878176*10^-12;
 
-Points = [PointA PointB];
+Points = [PointA PointB]; % change to a structure
 clear PointA;
 clear PointB;
 
-%Points = simulate(Points,{@gravitate,@electric},.01,2);
+Points = simulate(Points,{@gravitate,@electric},.01,2);
